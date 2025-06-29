@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Solana Price History Archive</title>
+  <style>
+    body { font-family: sans-serif; margin: 2em; background: #f9f9f9; }
+    code { background: #eee; padding: 2px 6px; border-radius: 4px; }
+    a { color: #007BFF; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <h1>📈 Solana Daily Price Archive</h1>
+  <p>This archive stores the daily price of Solana in plain text format, updated every morning around 7:00 AM IST.</p>
+
+  <h2>🔗 Accessing the Data</h2>
+  <p>Data is stored in the following structure inside a public Google Cloud Storage bucket:</p>
+
+  <pre><code>https://storage.googleapis.com/sol-price-history/YYYY/MM/DD.txt</code></pre>
+
+  <p>Example (June 29, 2025):
+    <a href="https://storage.googleapis.com/sol-price-history/2025/06/29.txt" target="_blank">
+      https://storage.googleapis.com/sol-price-history/2025/06/29.txt
+    </a>
+  </p>
+
+  <h2>💡 How to Use This</h2>
+  <ul>
+    <li>Make a direct link using the <code>YYYY/MM/DD.txt</code> format to download the text file</li>
+    <li>Each file contains a timestamp and price in CSV format: <code>2025-06-29T03:33:11Z, 150.12</code></li>
+    <li>You can write a script to fetch this data for plotting or analysis</li>
+  </ul>
+
+  <h2>🤖 Automated System</h2>
+  <p>This archive is updated by a <b>Google Cloud Function</b> scheduled to run daily, fetching Solana's price from <code>cryptoprices.cc</code> and storing it automatically.</p>
+</body>
+</html>
